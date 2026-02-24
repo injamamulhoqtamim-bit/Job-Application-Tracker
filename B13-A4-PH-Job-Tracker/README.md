@@ -6,3 +6,5 @@ getElementsByClassName(): It selects elements using their class name.Many elemen
 Also It is live (if the DOM changes, the collection updates automatically).
 
 querySelector() : It selects the first element that matches a CSS selector. We can use id (#id), (.class), tag (div, p) and also use complex CSS selectors. It returns only the first match.
+
+querySelectorAll(): It selects all elements that match a CSS selector and Returns a NodeList. It is Not live (static list).It can loop through it easily
