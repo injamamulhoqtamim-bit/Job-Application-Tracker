@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Application Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  :root {
+    --font-family: Arial, Helvetica, sans-serif;
+    --black: #000000;
+  }
+</style>
+</head>
+<body class="bg-[#F4F6F9] min-h-screen flex justify-center">
+
+  <div class="w-full max-w-4xl px-4 py-6">
+
+    <!-- Header -->
+    <div class="pt-6 sm:pt-10">
+      <h1 class="font-bold text-2xl sm:text-3xl text-black">
+        Job Application Tracker
+      </h1>
+
+      <!-- Dashboard Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+
+  <!-- Total Card -->
+  <div class="group bg-white border border-gray-200 rounded-xl p-5
+              transition-all duration-300 ease-in-out
+              hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03]
+              hover:border-blue-400 cursor-pointer">
+
+    <p class="text-sm text-gray-500 group-hover:text-blue-600 transition">
+      Total
+    </p>
+
+    <p id="totalCount" 
+       class="text-2xl font-bold mt-2 text-gray-800
+              group-hover:text-blue-600 transition">
+      8
+    </p>
+  </div>
+
+  <!-- Interview Card -->
+  <div class="group bg-white border border-gray-200 rounded-xl p-5
+              transition-all duration-300 ease-in-out
+              hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03]
+              hover:border-green-400 cursor-pointer">
+
+    <p class="text-sm text-gray-500 group-hover:text-green-600 transition">
+      Interview
+    </p>
+
+    <p id="interviewCount" 
+       class="text-2xl font-bold mt-2 text-green-600
+              group-hover:scale-100 transition duration-300">
+      0
+    </p>
+  </div>
+
+  <!-- Rejected Card -->
+  <div class="group bg-white border border-gray-200 rounded-xl p-5
+              transition-all duration-300 ease-in-out
+              hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03]
+              hover:border-red-400 cursor-pointer">
+
+    <p class="text-sm text-gray-500 group-hover:text-red-600 transition">
+      Rejected
+    </p>
+
+    <p id="rejectedCount" 
+       class="text-2xl font-bold mt-2 text-red-600
+              group-hover:scale-100 transition duration-300">
+      0
+    </p>
+  </div>
+
+</div>
+    </div>
+
+    <!-- Jobs Section -->
+    <div class="mt-10">
+
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-[var(--font-family)] font-bold text-gray-700">Available Jobs</h2>
+        <span id="tabCount" class="text-sm text-gray-500">8 Jobs</span>
+      </div>
+
+      <!-- Tabs button -->
+      <div class="flex flex-wrap gap-3 mb-6">
+
+        <button onclick="switchTab('all', this)" 
+          class="tab-btn bg-blue-500 text-white text-sm px-6 py-2 rounded-lg">
+          All
+        </button>
+
+        <button onclick="switchTab('interview', this)" 
+          class="tab-btn bg-gray-200 text-gray-600 text-sm px-6 py-2 rounded-lg">
+          Interview
+        </button>
+
+        <button onclick="switchTab('rejected', this)" 
+          class="tab-btn bg-gray-200 text-gray-600 text-sm px-6 py-2 rounded-lg">
+          Rejected
+        </button>
+
+      </div>
+<!-- Cards -->
+      <div id="jobContainer" class="flex flex-col gap-4"></div>
+<!-- Empty State added Picture -->
+      <div id="emptyState" class="hidden flex justify-center">
+        <div class="bg-white border border-gray-200 rounded-xl w-full min-h-[220px] px-4 py-6
+                    flex flex-col items-center justify-center text-center shadow-sm">
+                    <img src="./jobs.png" alt="No Jobs" class="w-20 h-20 object-contain mb-5" />
+
+          <h3 class="text-lg font-bold text-gray-800">
+            No jobs available
+          </h3>
+
+          <p class="text-sm text-gray-500 mt-2">
+            Check back soon for new job opportunities
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DELETE MODAL Popup Messege -->
+  <div id="deleteModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-xl shadow-lg w-[90%] max-w-sm p-6 text-center">
+      <h3 class="text-lg font-bold text-gray-800">
+        Are you sure you want to delete this item?
+      </h3>
+
+      <div class="flex justify-center gap-4 mt-6">
+        <button onclick="confirmDelete()" 
+          class="px-5 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition">
+          Delete
+        </button>
+
+        <button onclick="closeModal()" 
+          class="px-5 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+<script src="machine.js"></script>
+
+</body>
+</html>
+
