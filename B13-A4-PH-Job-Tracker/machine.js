@@ -118,6 +118,12 @@ empty.classList.add("hidden");
 //   document.getElementById("deleteModal").classList.add("flex");
 // }
 
+// delete modal section
+function openModal(id){
+  deleteId = id;
+  document.getElementById("deleteModal").classList.remove("hidden");
+  document.getElementById("deleteModal").classList.add("flex");
+}
 function closeModal(){
   document.getElementById("deleteModal").classList.add("hidden");
   document.getElementById("deleteModal").classList.remove("flex");
@@ -135,7 +141,7 @@ function updateStatus(id, status){
   job.status = status;
   renderJobs();
 }
-
+// totalCounts interviews and rejections
 function updateCounts(){
   document.getElementById("totalCount").innerText = jobs.length;
   document.getElementById("interviewCount").innerText = jobs.filter(j => j.status === "interview").length;
