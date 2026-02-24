@@ -105,17 +105,18 @@ empty.classList.add("hidden");
 </div>
     `;
 
+    // Card section 
     container.appendChild(card);
   });
 
   updateCounts();
 }
 
-function openModal(id){
-  deleteId = id;
-  document.getElementById("deleteModal").classList.remove("hidden");
-  document.getElementById("deleteModal").classList.add("flex");
-}
+// function openModal(id){
+//   deleteId = id;
+//   document.getElementById("deleteModal").classList.remove("hidden");
+//   document.getElementById("deleteModal").classList.add("flex");
+// }
 
 function closeModal(){
   document.getElementById("deleteModal").classList.add("hidden");
@@ -144,6 +145,7 @@ function updateCounts(){
 function switchTab(tab, element){
   currentTab = tab;
 
+// ta btn sections
   document.querySelectorAll(".tab-btn").forEach(btn=>{
     btn.classList.remove("bg-blue-500","text-white");
     btn.classList.add("bg-gray-200","text-gray-600");
