@@ -1,4 +1,4 @@
-### What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+### 1.What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 The difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll is :
 getElementById(): It selects one element using its id and IDs are supposed to be unique like only one element should have that id. It returns a single element object. If it doesn’t find anything, it also returns null.
 
@@ -16,3 +16,22 @@ Create → createElement(): const newElement = document.createElement("p");
 Add text → textContent: newElement.textContent = "Hello World!";
 
 Insert → appendChild(): document.body.appendChild(newElement);
+
+### 3. What is Event Bubbling? And how does it work?
+Event Bubbling is when an event starts from the target element and then moves upward through its parent elements.It like air bubbles in water.How bubbles are work simple example i show you:
+HTML:
+<div id="parent">
+  <button id="child">Click Me</button>
+</div> 
+
+JavaScript:
+document.getElementById("child").addEventListener("click", function() {
+  console.log("Button clicked");
+});
+
+document.getElementById("parent").addEventListener("click", function() {
+  console.log("Div clicked");
+});
+
+Output: Button clicked
+Div clicked
