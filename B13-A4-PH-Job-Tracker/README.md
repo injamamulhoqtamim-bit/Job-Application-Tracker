@@ -57,3 +57,19 @@ document.getElementById("parent").addEventListener("click", function(event) {
     console.log("Button clicked");
   }
 });
+
+### 5. What is the difference between preventDefault() and stopPropagation() methods?
+preventDefault()  is stops default action elements and stopPropagation() is stops event from moving to parent elements.
+Example:
+If we use preventDefault() method , it stop that like normal behavior.
+JavaScript:
+document.querySelector("a").addEventListener("click", function(event) {
+  event.preventDefault();
+});
+Or if we use stopPropagation() method,the event stops there.
+JavaScript:
+document.querySelector("button").addEventListener("click", function(event) {
+  event.stopPropagation();
+});
+
+
